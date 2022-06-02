@@ -1,5 +1,6 @@
 # team-53
-Akhil Rudrawar
-Aneesh Subudhi
-Vasu Mandhanya
+
+  1. Akhil Rudrawar
+  2. Aneesh Subudhi
+  3. Vasu Mandhanya
 
