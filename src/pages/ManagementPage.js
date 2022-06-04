@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import ManagementMilestonesComponent from '../components/ManagementMilestonesComponent'
 import ManagementIndicatorComponent from '../components/ManagementIndicatorComponent'
 import NavbarComponent from "../components/NavbarComponent"
@@ -6,10 +6,11 @@ import "./ManagementPage.css"
 
 const ManagementPage = () =>
 {
-  const [programName, setProgramName] = useState("")
+  const [ programName, setProgramName ] = useState( "" )
 
-  const handleProgramNameChange = (event) => {
-    setProgramName(event.target.value)
+  const handleProgramNameChange = ( event ) =>
+  {
+    setProgramName( event.target.value )
   }
 
   return (

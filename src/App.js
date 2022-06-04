@@ -15,7 +15,8 @@ import DonorPage from "./pages/DonorPage";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import { Suspense } from "react";
 
-function App() {
+function App ()
+{
   return (
     <>
       <Suspense>
@@ -38,7 +39,7 @@ function App() {
               }
             />
             <Route
-              path="/management"
+              path="/Management"
               element={
                 <ProtectedRoute>
                   <ManagementPage />
@@ -54,20 +55,20 @@ function App() {
               }
             />
 
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/adminSignup" element={<AdminSignupPage />} />
-            <Route path="/donorSignup" element={<DonorSignupPage />} />
+            <Route path="/login" element={ <LoginPage /> } />
+            <Route path="/signup" element={ <SignupPage /> } />
+            <Route path="/adminSignup" element={ <AdminSignupPage /> } />
+            <Route path="/donorSignup" element={ <DonorSignupPage /> } />
             <Route
               path="/coordinatorSignup"
-              element={<CoordinatorSignupPage />}
+              element={ <CoordinatorSignupPage /> }
             />
             <Route
               path="/managementSignup"
-              element={<ManagementSignupPage />}
+              element={ <ManagementSignupPage /> }
             />
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/Coordinator" element={<CoordinatorPage />} />
+            <Route path="/" element={ <LandingPage /> } />
+            <Route path="/Coordinator" element={ <CoordinatorPage /> } />
           </Routes>
         </UserAuthContextProvider>
       </Suspense>
