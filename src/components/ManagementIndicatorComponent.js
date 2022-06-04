@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {db} from "../firebase"
 import {collection, getDocs, addDoc, setDoc, doc} from "firebase/firestore"
 
-const ManagementIndicators = () => {
+const ManagementIndicatorComponent = () => {
     const [formFields, setFormFields] = useState([
         { name: '', type: '' },
       ])
@@ -79,4 +79,4 @@ const ManagementIndicators = () => {
       );
 }
 
-export default ManagementIndicators
+export default ManagementIndicatorComponent

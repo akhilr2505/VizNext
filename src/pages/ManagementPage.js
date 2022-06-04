@@ -1,10 +1,10 @@
 import React from 'react'
-import ManagementIndicators from '../components/ManagementIndicators'
+import ManagementIndicatorComponent from '../components/ManagementIndicatorComponent'
 
 const ManagementPage = () => {
   return (
     <div>ManagementPage
-    <ManagementIndicators />
+    <ManagementIndicatorComponent />
     </div>
   )
 }
