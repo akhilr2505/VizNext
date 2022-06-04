@@ -10,8 +10,8 @@ import CoordinatorSignupPage from "./pages/CoordinatorSignupPage";
 import ManagementSignupPage from "./pages/ManagementSignupPage";
 import LandingPage from "./pages/LandingPage";
 import ProtectedRoute from "./pages/ProtectedRoute";
-import CoordinatorPage from "./pages/CoordinatorPage";
 import ManagementPage from "./pages/ManagementPage";
+import CoordinatorPage from "./pages/CoordinatorPage";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import { Suspense } from "react"
 
