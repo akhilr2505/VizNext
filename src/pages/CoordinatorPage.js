@@ -1,12 +1,34 @@
-import React from 'react'
-
+import React,{useEffect,useState} from 'react'
+import {db} from "../firebase"
+import {collection, getDocs, addDoc, setDoc, doc} from "firebase/firestore"
 const CoordinatorPage = () => {
+    
+    const [identifier, setidentifier] = useState([''])
+    const usersCollectionRef = collection(db, "prog10");
+    
+    useEffect(() => {
+        const getfields = async () => {
+          const data = await getDocs(usersCollectionRef);
+          setidentifier(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+          console.log('hello');
+          console.log(data);
+        };
+    
+        getfields();
+      }, []);
+      
   return (
     <div>CoordinatorPage
-      <form  className="w-75 mx-auto ">
+        
+        <div>
+            
+        </div>
+
+      <form  className="w-75 mx-auto  ">
             <div className="mb-3">
                 <label htmlFor="name"> Name</label>
                 <input type="text"  id="name" className="form-control" />
+                
             </div>
            
             <div className="mb-3">
@@ -42,7 +64,7 @@ const CoordinatorPage = () => {
                 <input type="file" id="upload" className="form-control" />
             </div>
             <div className="mb-3">
-                <button type="submit" className='btn btn-success'>Add Item</button>
+                <button type="submit" className='btn btn-success'>Submit</button>
             </div>
         </form>
     </div>
