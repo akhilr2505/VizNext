@@ -1,3 +1,4 @@
+/*
 .landingPage {
     display: flex;
     flex: content;
@@ -16,7 +17,37 @@
     justify-content: center;
     align-items: center;
 }
-
+*/
 .authButtons {
-    margin: 20px;
+    text-align: right;
+    display: inline-block;
+    
+}
+
+
+.about{
+    padding-top: 20px;
+    background-color: #9BA3EB;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.im{
+    
+    width: 100%;
+    height: 75;
+    
+}
+.c1{
+    padding-top: 50px;
+    padding-left: 20px;
+    border: 50px;
+    padding-bottom: 50px;
+}
+.f1{
+    text-emphasis-color: white;
+    background-color: #646FD4;
+    text-align: center;
+}
+.cards1{
+    background-color: #DBDFFD;
 }
