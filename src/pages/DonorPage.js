@@ -2,6 +2,7 @@ import NavbarComponent from "../components/NavbarComponent";
 import { BarComponent } from "../components/BarComponent";
 import { PieChartComponents } from "../components/PieChartComponents";
 import { HorizontalBarComponent } from "../components/HorizontalBarComponent";
+import { FormComponent } from "../components/FormComponent";
 import React from "react";
 import "./DonorPage.css";
 import {
@@ -145,7 +146,7 @@ export default function App() {
       ],
     },
     {
-      labels,
+      labels: labels_alt,
       datasets: [
         {
           label: programs[2],
@@ -185,10 +186,17 @@ export default function App() {
   return (
     <div>
       <NavbarComponent />
+      <FormComponent />
+      <p style={{ textAlign: "center", margin: "20px 20px" }}>
+        IMPACT FIGURES AND VISUALIZATION
+      </p>
       <BarComponent data={dataPlot[0]} heading={programs[0]} />
       <br />
       <BarComponent data={dataPlot[1]} heading={programs[1]} />
       <br />
+      <p style={{ textAlign: "center", margin: "20px 20px" }}>
+        STUDENTS HAVING ACCESS TO EDUCATION
+      </p>
       <PieChartComponents data={dataPlot[2]} />
       <br />
       <HorizontalBarComponent data={dataPlot[3]} heading={programs[3]} />

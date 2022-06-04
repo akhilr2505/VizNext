@@ -11,6 +11,7 @@ export const PieChartComponents = ({ data }) => {
         height: "60vh",
         width: "70 vw",
         position: "relative",
+        margin: "70px auto",
         marginBottom: "5%",
         padding: "1%",
       }}

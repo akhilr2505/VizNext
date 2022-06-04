@@ -83,6 +83,7 @@ export function HorizontalBarComponent({ data, heading }) {
         height: "60vh",
         width: "70 vw",
         position: "relative",
+        margin: "40px auto",
         marginBottom: "1%",
         padding: "1%",
       }}

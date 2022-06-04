@@ -52,6 +52,7 @@ export const BarComponent = ({ data, heading }) => {
         height: "60vh",
         width: "70vw",
         position: "relative",
+        margin: "40px auto",
         marginBottom: "5%",
         padding: "1%",
       }}
