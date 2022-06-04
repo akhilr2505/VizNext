@@ -57,27 +57,27 @@ const ManagementMilestonesComponent = ( programName ) =>
 
     return (
         <div className="Milestones">
-            
-            <form onSubmit={ handleNewMilestone } className="form">
-            <div className='milestoneFields'>
-            <label className="milestoneFieldsLabel">Add Milestone: </label>
-                <Form.Group className="milestoneField" controlId="formBasicEmail">
-                    <Form.Control
-                        type="text"
-                        placeholder="Milestone Name"
-                        onChange={ ( e ) => setMilestone( e.target.value ) }
-                    />
-                </Form.Group>
 
-                <Form.Group className="milestoneField" controlId="formBasicPassword">
-                    <Form.Control
-                        type="date"
-                        placeholder="date"
-                        onChange={ ( e ) => setMilestoneDate( e.target.value ) }
-                    />
-                </Form.Group>
-            </div>
-               
+            <form onSubmit={ handleNewMilestone } className="form">
+                <div className='milestoneFields'>
+                    <label className="milestoneFieldsLabel">Add Milestone: </label>
+                    <Form.Group className="milestoneField" controlId="formBasicEmail">
+                        <Form.Control
+                            type="text"
+                            placeholder="Milestone Name"
+                            onChange={ ( e ) => setMilestone( e.target.value ) }
+                        />
+                    </Form.Group>
+
+                    <Form.Group className="milestoneField" controlId="formBasicPassword">
+                        <Form.Control
+                            type="date"
+                            placeholder="date"
+                            onChange={ ( e ) => setMilestoneDate( e.target.value ) }
+                        />
+                    </Form.Group>
+                </div>
+
 
 
                 <Button variant="primary" type="Submit" className="signupButton milestoneButton">
@@ -105,9 +105,9 @@ const ManagementMilestonesComponent = ( programName ) =>
                 events={ milestones }
             />
 
-                <Button variant="primary" className="signupButton submitMilestone" onClick={handleSubmit}>
-                    Submit Milestones
-                </Button>   
+            <Button variant="primary" className="signupButton submitMilestone" onClick={ handleSubmit }>
+                Submit Milestones
+            </Button>
         </div>
     )
 
