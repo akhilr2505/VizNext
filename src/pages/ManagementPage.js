@@ -1,8 +1,12 @@
 import React from 'react'
-
-const ManagementPage = () => {
+import ManagementMilestonesComponent from '../components/ManagementMilestonesComponent'
+const ManagementPage = () =>
+{
   return (
-    <div>ManagementPage</div>
+    <div>ManagementPage
+      <ManagementMilestonesComponent></ManagementMilestonesComponent>
+    </div>
+
   )
 }
 
