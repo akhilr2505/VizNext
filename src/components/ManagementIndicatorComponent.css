@@ -1,0 +1,24 @@
+.indicatorFields {
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 60px;
+    margin-left: 20px;
+}
+
+.Indicators {
+    margin-top: -90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addmoreButton {
+    margin-top: -20px;
+}
+
+.submitButton {
+    margin-bottom: 50px;
+}

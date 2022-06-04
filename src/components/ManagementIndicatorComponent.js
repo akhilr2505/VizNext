@@ -1,17 +1,13 @@
 import React, {useState} from 'react'
 import {db} from "../firebase"
 import {collection, getDocs, addDoc, setDoc, doc} from "firebase/firestore"
+import "./ManagementIndicatorComponent.css"
+import { Button } from "react-bootstrap";
 
 const ManagementIndicatorComponent = (progName) => {
     const [formFields, setFormFields] = useState([
         { name: '', type: '' },
       ])
-
-      const [programName, setProgramName] = useState("")
-
-      const handleProgramNameChange = (event) => {
-        setProgramName(event.target.value)
-      }
     
       const handleFormChange = (event, index) => {
         let data = [...formFields];
@@ -22,14 +18,14 @@ const ManagementIndicatorComponent = (progName) => {
       const handleSubmit = (e) => {
         e.preventDefault();
    
-    try {
-      setDoc(doc(db, "program_templates", progName.props,"categories", "form_fields"), {
-        formFields
-      })
-     
-    } catch (err) {
-     console.log(err)
-    }
+        try {
+          setDoc(doc(db, "program_templates", progName.props,"categories", "form_fields"), {
+            formFields
+          })
+        
+        } catch (err) {
+        console.log(err)
+        }
       }
     
       const addFields = () => {
@@ -48,10 +44,12 @@ const ManagementIndicatorComponent = (progName) => {
       }
     
       return (
-        <div className="App">
+        <div className="Indicators">
+        
+
         <h1>Indicators</h1>
           <form onSubmit={handleSubmit}>
-          <input name='programName' placeholder='Program Name' onChange={event => handleProgramNameChange(event)} value={programName}></input>
+          
             {formFields.map((form, index) => {
               return (
                 <div key={index}>
@@ -60,21 +58,30 @@ const ManagementIndicatorComponent = (progName) => {
                     placeholder='Name'
                     onChange={event => handleFormChange(event, index)}
                     value={form.name}
+                    className='indicatorFields'
                   />
                   <input
                     name='type'
                     placeholder='Type'
                     onChange={event => handleFormChange(event, index)}
                     value={form.type}
+                    className='indicatorFields'
                   />
-                  <button onClick={() => removeFields(index)}>Remove</button>
+                  <Button variant="danger" className="signupButton" onClick={() => removeFields(index)}>
+                    Remove
+          </Button> 
                 </div>
               )
             })}
           </form>
-          <button onClick={addFields}>Add More..</button>
+          <Button variant="primary" className="signupButton addmoreButton" onClick={addFields}>
+                    Add Indicator
+          </Button> 
           <br />
-          <button onClick={handleSubmit}>Submit</button>
+        
+          <Button variant="primary" className="signupButton submitButton" onClick={handleSubmit}>
+                    Submit Indicators
+          </Button> 
         </div>
       );
 }

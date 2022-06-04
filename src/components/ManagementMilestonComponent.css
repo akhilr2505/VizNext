@@ -1,0 +1,25 @@
+.milestoneFields {
+    display: flex;
+    flex-direction: row;
+}
+
+.milestoneFieldsLabel {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 25px;
+}
+
+.milestoneField {
+    margin: 20px;
+}
+
+.milestoneButton {
+    margin-bottom: 100px;
+    margin-top: 40px;
+}
+
+.submitMilestone {
+   margin-left: 30vw;
+   margin-top: 60px;
+   margin-bottom: 200px;
+}

@@ -5,7 +5,7 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import {db} from "../firebase"
 import {collection, getDocs, addDoc, setDoc, doc} from "firebase/firestore"
-
+import "./ManagementMilestonComponent.css"
 
 const ManagementMilestonesComponent = (programName) =>
 {
@@ -40,9 +40,11 @@ const ManagementMilestonesComponent = (programName) =>
     
     return (
         <div className="Milestones">
-            <h2 className="mb-3">Add Milestone: </h2>
+            
             <form onSubmit={ handleNewMilestone } className="form">
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+            <div className='milestoneFields'>
+            <label className="milestoneFieldsLabel">Add Milestone: </label>
+                <Form.Group className="milestoneField" controlId="formBasicEmail">
                     <Form.Control
                         type="text"
                         placeholder="Milestone Name"
@@ -50,23 +52,23 @@ const ManagementMilestonesComponent = (programName) =>
                     />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="milestoneField" controlId="formBasicPassword">
                     <Form.Control
                         type="date"
                         placeholder="date"
                         onChange={ ( e ) => setMilestoneDate( e.target.value ) }
                     />
                 </Form.Group>
+            </div>
+               
 
 
-                <Button variant="primary" type="Submit" className="signupButton">
+                <Button variant="primary" type="Submit" className="signupButton milestoneButton">
                     Add Milestone
                 </Button>
 
             </form>
-            <h2>
-                Milestones
-            </h2>
+           
             {
                 milestones.map( val => { <p>{ val.title } on  { val.date } </p> } )
             }
@@ -77,7 +79,7 @@ const ManagementMilestonesComponent = (programName) =>
                 events={ milestones }
             />
 
-                <Button variant="primary" className="signupButton" onClick={handleSubmit}>
+                <Button variant="primary" className="signupButton submitMilestone" onClick={handleSubmit}>
                     Submit Milestones
                 </Button>   
         </div>
