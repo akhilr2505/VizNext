@@ -6,4 +6,4 @@ const CoordinatorPage = () => {
   )
 }
 
-export default CoordinatorPage
+export default CoordinatorPage;
