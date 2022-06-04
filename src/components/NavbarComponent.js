@@ -21,7 +21,7 @@ const NavbarComponent = () =>  {
               }
       getUserDetails()
       console.log(userDetails)
-    })
+    }, [])
 
   
     const handleLogout = async () => {

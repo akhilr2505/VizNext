@@ -16,43 +16,28 @@ const HomePage = () => {
             }
     getUserDetails()
     console.log(userDetails)
-  }, [userDetails, user.email])
+  }, [])
 
  
-  if(userDetails.role === "student") {
+  
     return (
-      <div className="homePage">
+      <>
         <NavbarComponent />
+      <div className="homePage">
+      
         <div className="mainHomePage">
         <h1>Home page</h1>
         <div className="firstDiv">
-          Welcome Student<br />
-          {user && user.email}
+          Welcome 
         </div>
         <div className="logoutButton">
         </div>
         </div>
         
       </div>
+      </>
     );
-  }
-  else {
-    return (
-      <div className="homePage">
-        <NavbarComponent />
-        <div className="mainHomePage">
-        <h1>Home Page</h1>
-        <div className="firstDiv">
-          Welcome Admin<br />
-          {user && user.email}
-        </div>
-        <div className="logoutButton">
-        </div>
-        </div>
-        
-      </div>
-    );
-  }
+  
   
 };
 

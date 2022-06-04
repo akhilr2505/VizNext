@@ -14,7 +14,7 @@ const ManagementPage = () =>
   }
 
   return (
-    <div>
+    <div >
       <NavbarComponent />
       <div className='managementPage'>
         <h1 className='pageTitle'>Management Page</h1>
