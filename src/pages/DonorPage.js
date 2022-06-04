@@ -184,19 +184,26 @@ export default function App() {
     },
   ];
   return (
-    <div>
+    <div className="donor-body">
       <NavbarComponent />
       <FormComponent />
-      <p style={{ textAlign: "center", margin: "20px 20px" }}>
+      <p
+        style={{
+          textAlign: "center",
+          margin: "20px 20px",
+          fontWeight: "500",
+          fontSize: "x-large",
+        }}
+      >
+        {/* <hr /> */}
+        <hr />
         IMPACT FIGURES AND VISUALIZATION
       </p>
       <BarComponent data={dataPlot[0]} heading={programs[0]} />
       <br />
       <BarComponent data={dataPlot[1]} heading={programs[1]} />
       <br />
-      <p style={{ textAlign: "center", margin: "20px 20px" }}>
-        STUDENTS HAVING ACCESS TO EDUCATION
-      </p>
+      <p className="bis-title">STUDENTS HAVING ACCESS TO EDUCATION</p>
       <PieChartComponents data={dataPlot[2]} />
       <br />
       <HorizontalBarComponent data={dataPlot[3]} heading={programs[3]} />

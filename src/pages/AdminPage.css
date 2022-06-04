@@ -1,0 +1,9 @@
+.adminPage {
+    padding: 5%;
+}
+
+.chartContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+}
