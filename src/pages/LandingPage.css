@@ -1,0 +1,22 @@
+.landingPage {
+    display: flex;
+    flex: content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #9BA3EB;
+}
+
+.loginSignupButtons {
+    margin: 35px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.authButtons {
+    margin: 20px;
+}
