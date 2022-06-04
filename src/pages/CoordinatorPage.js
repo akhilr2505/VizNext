@@ -6,6 +6,7 @@ import { collection, getDocs, addDoc, setDoc, doc, getDocFromCache } from "fireb
 import { async } from "@firebase/util";
 import userEvent from "@testing-library/user-event";
 import { useNavigate } from "react-router";
+import NavbarComponent from "../components/NavbarComponent";
 
 
 const CoordinatorPage = () =>
@@ -62,7 +63,7 @@ const CoordinatorPage = () =>
 
 
     return (
-        <div>Coordinator Page
+        <div>      <NavbarComponent />
             <form className="w-75 mx-auto " name="indicator-form" onSubmit={ handleNewEntry } >
                 {
                     formFields.map( ( value ) =>
