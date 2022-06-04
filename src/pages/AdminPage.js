@@ -134,45 +134,45 @@ const AdminPage = () => {
   const [finalChartData, setFinalChartData] = useState();
   
   
-  useEffect(() => {
+  // useEffect(() => {
     
    
-    const getPrograms = async () => {
+  //   const getPrograms = async () => {
 
-    const data = await getDocs(programCollectionRef);
-    let programIds = [];
-    data.docs.map((doc) => {
-      const obj = doc.data();
-      programIds[obj.name] = {
-        "funds_in" : obj.funds_in,
-        "funds_out": obj.funds_out
-      }
-    });
-    console.log(programIds)
-    setPrograms(programIds);
-    }
-    getPrograms();
-  });
+  //   const data = await getDocs(programCollectionRef);
+  //   let programIds = [];
+  //   data.docs.map((doc) => {
+  //     const obj = doc.data();
+  //     programIds[obj.name] = {
+  //       "funds_in" : obj.funds_in,
+  //       "funds_out": obj.funds_out
+  //     }
+  //   });
+  //   console.log(programIds)
+  //   setPrograms(programIds);
+  //   }
+  //   getPrograms();
+  // });
 
   const [chartType, setChartType] = useState("Bar");
-  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-    const chartData = {
-      labels,
-      datasets: [
-        {
-          label: 'Covishield',
-          data: values["funds_in"],
-          backgroundColor: 'rgba(255, 99, 132, 0.5)',
-          borderColor: 'rgb(255, 99, 132)',
-        },
-        {
-          label: 'Covaxin',
-          data: values["funds_out"],
-          borderColor: 'rgb(53, 162, 235)',
-          backgroundColor: 'rgba(53, 162, 235, 0.5)',
-        },
-      ]
-  }
+  // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  //   const chartData = {
+  //     labels,
+  //     datasets: [
+  //       {
+  //         label: 'Covishield',
+  //         data: values["funds_in"],
+  //         backgroundColor: 'rgba(255, 99, 132, 0.5)',
+  //         borderColor: 'rgb(255, 99, 132)',
+  //       },
+  //       {
+  //         label: 'Covaxin',
+  //         data: values["funds_out"],
+  //         borderColor: 'rgb(53, 162, 235)',
+  //         backgroundColor: 'rgba(53, 162, 235, 0.5)',
+  //       },
+  //     ]
+  // }
   return (
     <div className='adminPage'>
       <div>
