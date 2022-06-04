@@ -21,7 +21,7 @@ const NavbarComponent = () =>  {
               }
       getUserDetails()
       console.log(userDetails)
-    })
+    }, [])
 
   
     const handleLogout = async () => {
@@ -86,7 +86,7 @@ const NavbarComponent = () =>  {
         </div>
       );
     }
-    if(userDetails.role === "admin") {
+    if(userDetails.role === "management") {
       return (
         <div className="mainNav">
            <Navbar bg="dark" variant="dark" style={{backgroundcolor: "#242F9B"}}>

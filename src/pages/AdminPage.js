@@ -131,33 +131,48 @@ const AdminPage = () => {
   const [programs, setPrograms] = useState();
   const [programMetrics, setProgramMetrics] = useState();
   const programCollectionRef = collection(db, "program_metrics");
+  const [finalChartData, setFinalChartData] = useState();
   
   
   useEffect(() => {
     
-    let data3;
+   
     const getPrograms = async () => {
 
     const data = await getDocs(programCollectionRef);
     let programIds = [];
     data.docs.map((doc) => {
       const obj = doc.data();
-      programIds[obj.name] = doc.id;
+      programIds[obj.name] = {
+        "funds_in" : obj.funds_in,
+        "funds_out": obj.funds_out
+      }
     });
     console.log(programIds)
     setPrograms(programIds);
-  
-
-    const metricCollectionRef = collection(db, "program_metrics", programIds["healthcare_foundation"], "logs");
-    const metricData = await getDocs(metricCollectionRef);
-    let allmetricData = metricData.docs.map((doc) => (doc.data()));
-    setProgramMetrics(allmetricData);
-    console.log(allmetricData)
     }
     getPrograms();
-  },[])
+  });
 
   const [chartType, setChartType] = useState("Bar");
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+    const chartData = {
+      labels,
+      datasets: [
+        {
+          label: 'Covishield',
+          data: values["funds_in"],
+          backgroundColor: 'rgba(255, 99, 132, 0.5)',
+          borderColor: 'rgb(255, 99, 132)',
+        },
+        {
+          label: 'Covaxin',
+          data: values["funds_out"],
+          borderColor: 'rgb(53, 162, 235)',
+          backgroundColor: 'rgba(53, 162, 235, 0.5)',
+        },
+      ]
+  }
   return (
     <div className='adminPage'>
       <div>
