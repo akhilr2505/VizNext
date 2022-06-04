@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import HomePage from "./pages/HomePage";
@@ -12,11 +11,11 @@ import LandingPage from "./pages/LandingPage";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import ManagementPage from "./pages/ManagementPage";
 import CoordinatorPage from "./pages/CoordinatorPage";
+import DonorPage from "./pages/DonorPage";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
-import { Suspense } from "react"
+import { Suspense } from "react";
 
-function App ()
-{
+function App() {
   return (
     <>
       <Suspense>
@@ -30,11 +29,14 @@ function App ()
                 </ProtectedRoute>
               }
             />
-            <Route path="/Coordinator" element={
-              <ProtectedRoute>
-                <CoordinatorPage />
-              </ProtectedRoute>
-            } />
+            <Route
+              path="/Coordinator"
+              element={
+                <ProtectedRoute>
+                  <CoordinatorPage />
+                </ProtectedRoute>
+              }
+            />
             <Route
               path="/management"
               element={
@@ -43,20 +45,32 @@ function App ()
                 </ProtectedRoute>
               }
             />
+            <Route
+              path="/donor"
+              element={
+                <ProtectedRoute>
+                  <DonorPage />
+                </ProtectedRoute>
+              }
+            />
 
-            <Route path="/login" element={ <LoginPage /> } />
-            <Route path="/signup" element={ <SignupPage /> } />
-            <Route path="/adminSignup" element={ <AdminSignupPage /> } />
-            <Route path="/donorSignup" element={ <DonorSignupPage /> } />
-            <Route path="/coordinatorSignup" element={ <CoordinatorSignupPage /> } />
-            <Route path="/managementSignup" element={ <ManagementSignupPage /> } />
-            <Route path="/" element={ <LandingPage /> } />
-            <Route path="/Coordinator" element={ <CoordinatorPage /> } />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/adminSignup" element={<AdminSignupPage />} />
+            <Route path="/donorSignup" element={<DonorSignupPage />} />
+            <Route
+              path="/coordinatorSignup"
+              element={<CoordinatorSignupPage />}
+            />
+            <Route
+              path="/managementSignup"
+              element={<ManagementSignupPage />}
+            />
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/Coordinator" element={<CoordinatorPage />} />
           </Routes>
         </UserAuthContextProvider>
       </Suspense>
-
-
     </>
   );
 }
