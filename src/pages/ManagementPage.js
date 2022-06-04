@@ -1,11 +1,14 @@
 import React from 'react'
+import ManagementMilestonesComponent from '../components/ManagementMilestonesComponent'
 import ManagementIndicatorComponent from '../components/ManagementIndicatorComponent'
-
-const ManagementPage = () => {
+const ManagementPage = () =>
+{
   return (
     <div>ManagementPage
-    <ManagementIndicatorComponent />
+      <ManagementMilestonesComponent></ManagementMilestonesComponent>
+      <ManagementIndicatorComponent />
     </div>
+
   )
 }
 
