@@ -1,6 +1,7 @@
 import NavbarComponent from "../components/NavbarComponent";
 import { BarComponent } from "../components/BarComponent";
-import { PieComponent } from "../components/PieComponent";
+import { PieChartComponents } from "../components/PieChartComponents";
+import { HorizontalBarComponent } from "../components/HorizontalBarComponent";
 import React from "react";
 import "./DonorPage.css";
 import {
@@ -12,7 +13,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar, Chart } from "react-chartjs-2";
 import faker from "faker";
 
 ChartJS.register(
@@ -83,7 +83,14 @@ export default function App() {
     "November",
     "December",
   ];
-
+  const labels_alt = [
+    "Preschooling",
+    "Primary eduction",
+    "Secondary education",
+    "Senior Secondary education",
+    "Higher education",
+    "Graduation",
+  ];
   const data = {
     labels,
     datasets: [
@@ -102,15 +109,18 @@ export default function App() {
   const programs = [
     "VACCINATION DRIVE",
     "STREET LIGHTS INSTALLED",
-    "STUDENTS HAVING ACCESS TO PRESCHOOL",
-    "# OF LAKES OF REVIVED",
+    "STUDENTS HAVING ACCESS TO EDUCATION",
+    "# OF LAKES REVIVED",
   ];
+
   const programData = [
     [
       45045, 56450, 65004, 65789, 76001, 77891, 89001, 92000, 92300, 94000,
       95032, 96034,
     ],
     [235, 435, 356, 456, 567, 657, 567, 357, 645, 598, 700, 679],
+    [45678, 34567, 30000, 28000, 22203, 15000],
+    [4, 5, 6, 7, 5, 6, 5, 5, 6, 7, 8, 7],
   ];
 
   const dataPlot = [
@@ -135,32 +145,53 @@ export default function App() {
       ],
     },
     {
-      label: programs[2],
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
+      labels,
+      datasets: [
+        {
+          label: programs[2],
+          data: programData[2],
+          backgroundColor: [
+            "rgba(255, 99, 132, 0.2)",
+            "rgba(54, 162, 235, 0.2)",
+            "rgba(255, 206, 86, 0.2)",
+            "rgba(75, 192, 192, 0.2)",
+            "rgba(153, 102, 255, 0.2)",
+            "rgba(255, 159, 64, 0.2)",
+          ],
+          borderColor: [
+            "rgba(255, 99, 132, 1)",
+            "rgba(54, 162, 235, 1)",
+            "rgba(255, 206, 86, 1)",
+            "rgba(75, 192, 192, 1)",
+            "rgba(153, 102, 255, 1)",
+            "rgba(255, 159, 64, 1)",
+          ],
+          borderWidth: 1,
+        },
       ],
-      borderColor: [
-        "rgba(255, 99, 132, 1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)",
+    },
+    {
+      labels,
+      datasets: [
+        {
+          label: programs[3],
+          data: programData[3],
+          borderColor: "rgb(255, 99, 132)",
+          backgroundColor: "rgba(255, 99, 132, 0.5)",
+        },
       ],
-      borderWidth: 1,
     },
   ];
   return (
     <div>
       <NavbarComponent />
       <BarComponent data={dataPlot[0]} heading={programs[0]} />
+      <br />
       <BarComponent data={dataPlot[1]} heading={programs[1]} />
+      <br />
+      <PieChartComponents data={dataPlot[2]} />
+      <br />
+      <HorizontalBarComponent data={dataPlot[3]} heading={programs[3]} />
     </div>
   );
 }

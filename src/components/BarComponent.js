@@ -33,21 +33,6 @@ ChartJS.register(
 //   },
 // };
 
-const labels = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-
 export const BarComponent = ({ data, heading }) => {
   const options = {
     responsive: true,
@@ -66,8 +51,8 @@ export const BarComponent = ({ data, heading }) => {
       style={{
         height: "60vh",
         width: "70vw",
-        position: "absolute",
-        marginBottom: "1%",
+        position: "relative",
+        marginBottom: "5%",
         padding: "1%",
       }}
     >
