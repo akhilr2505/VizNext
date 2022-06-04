@@ -10,6 +10,7 @@ import CoordinatorSignupPage from "./pages/CoordinatorSignupPage";
 import ManagementSignupPage from "./pages/ManagementSignupPage";
 import LandingPage from "./pages/LandingPage";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import ManagementPage from "./pages/ManagementPage";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
 import {Suspense} from "react"
 
@@ -24,6 +25,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <HomePage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/management"
+                element={
+                  <ProtectedRoute>
+                    <ManagementPage />
                   </ProtectedRoute>
                 }
               />
