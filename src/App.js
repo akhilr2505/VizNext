@@ -55,7 +55,7 @@ function App ()
                 </ProtectedRoute>
               }
             />
-             <Route
+            <Route
               path="/admin"
               element={
                 <ProtectedRoute>
