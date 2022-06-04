@@ -75,115 +75,102 @@ export const data = {
   ],
 };
 
-// allProjectsData = [{
-//   project : {
-//     name : 'Vaccine Drive'
-//     Dataset: [{
-//       month: "Jan",
-//       patientCount: 23,
-//       wastage: 34,
-//     },{
-//       month: "Feb",
-//       patientCount: 23,
-//       wastage: 34,
-//     },{
-//       month: "Mar",
-//       patientCount: 23,
-//       wastage: 34,
-//     }],
-//   }},
-//   project: {
-
-//   }
-// ]
 
 
-export const data2 = {
-  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-  datasets: [
-    {
-      labels,
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)',
-      ],
-      borderColor: [
-        'rgba(255, 99, 132, 1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)',
-      ],
-      borderWidth: 1,
-    },
-  ],
-};
 
 
 const AdminPage = () => {
 
   const [programs, setPrograms] = useState();
-  const [programMetrics, setProgramMetrics] = useState();
+  const [allProjects, setAllProjects] = useState([]);
+  const [currentProgram, setCurrentProgram] = useState();
   const programCollectionRef = collection(db, "program_metrics");
-  const [finalChartData, setFinalChartData] = useState();
+  const [fundIn, setFundIn] = useState([]);
+  const [fundOut, setFundOut] = useState([]);
   
-  
-  // useEffect(() => {
-    
-   
-  //   const getPrograms = async () => {
+  useEffect(() => {
+    const getPrograms = async () => {
+    const data = await getDocs(programCollectionRef);
+    let programIds = [];
+    let allPrograms = [];
+    data.docs.map((doc) => {
+      const obj = doc.data();
+      programIds[obj.name] = {
+        "funds_in" : obj.funds_in,
+        "funds_out": obj.funds_out
+      }
+      allPrograms.push(obj.name);
+    });
+    setAllProjects(allPrograms);
+    console.log(programIds)
+    setPrograms(programIds);
 
-  //   const data = await getDocs(programCollectionRef);
-  //   let programIds = [];
-  //   data.docs.map((doc) => {
-  //     const obj = doc.data();
-  //     programIds[obj.name] = {
-  //       "funds_in" : obj.funds_in,
-  //       "funds_out": obj.funds_out
-  //     }
-  //   });
-  //   console.log(programIds)
-  //   setPrograms(programIds);
-  //   }
-  //   getPrograms();
-  // });
+    }
+    getPrograms();
+  },[]);
 
   const [chartType, setChartType] = useState("Bar");
-  // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  //   const chartData = {
-  //     labels,
-  //     datasets: [
-  //       {
-  //         label: 'Covishield',
-  //         data: values["funds_in"],
-  //         backgroundColor: 'rgba(255, 99, 132, 0.5)',
-  //         borderColor: 'rgb(255, 99, 132)',
-  //       },
-  //       {
-  //         label: 'Covaxin',
-  //         data: values["funds_out"],
-  //         borderColor: 'rgb(53, 162, 235)',
-  //         backgroundColor: 'rgba(53, 162, 235, 0.5)',
-  //       },
-  //     ]
-  // }
+  const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September'].slice(0, fundIn.length);
+  const chartData = {
+    labels,
+    datasets: [
+      {
+        label: 'Fund in',
+        data: fundIn,
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderColor: 'rgb(255, 99, 132)',
+      },
+      {
+        label: 'Funds Out',
+        data: fundOut,
+        borderColor: 'rgb(53, 162, 235)',
+        backgroundColor: 'rgba(53, 162, 235, 0.5)',
+      },
+    ]
+  }
+
+  const data2 = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'].slice(0, fundIn.length),
+    datasets: [
+      {
+        labels,
+        data: fundIn,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ].slice(0, fundIn.length),
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ].slice(0, fundIn.length),
+        borderWidth: 1,
+      },
+    ],
+  };
   return (
     <div className='adminPage'>
       <div>
         <h1>Admin Dashboard</h1>
       </div>
-      <div>
-        <Form.Select>
-          <option>Project 1</option>
-          <option>Project 2</option>
-          <option>Project 3</option>
-        </Form.Select>
+      <div>{allProjects.length > 0 ?
+        <Form.Select onChange={(e) => {setCurrentProgram(e.target.value)
+         setFundIn(programs[e.target.value].funds_in);
+          setFundOut(programs[e.target.value].funds_out)}}>
+            {allProjects.map((p) => <option>{p}</option>)}
+          {/* <option>education_foundation</option>
+          <option>healthcare_foundation</option>
+          <option>hunger_foundation</option> */}
+        </Form.Select> :
+        <h3>Loading...</h3>
+        }
       </div>
       <div>
         <Form.Select onChange={(e) => setChartType(e.target.value)}>
@@ -192,17 +179,17 @@ const AdminPage = () => {
           <option>Line</option>
         </Form.Select>
       </div>
-      <div className='chartContainer'>
+      <div className='chartContainer'> 
         {chartType === "Bar" && <div style={{height:"60vh", width: "70vw",position:"relative", marginBottom:"1%", padding:"1%"}}>
-          <Bar options={options} data={data} />
+          <Bar options={options} data={chartData} />
         </div>}
 
-        {chartType === "Pie" && <div style={{height:"60vh", width: "70vw",position:"relative", marginBottom:"1%", padding:"1%"}}>
+        {chartType === "Pie" &&  <div style={{height:"60vh", width: "70vw",position:"relative", marginBottom:"1%", padding:"1%"}}>
           <Pie data={data2} options={{maintainAspectRatio:false}}/>
         </div>}
 
         {chartType === "Line" && <div style={{height:"60vh", width: "70vw",position:"relative", marginBottom:"1%", padding:"1%"}}>
-          <Line options={options} data={data} />;
+          <Line options={options} data={chartData} />;
         </div>}
       </div>
      
