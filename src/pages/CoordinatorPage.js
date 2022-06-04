@@ -5,6 +5,7 @@ import { db } from "../firebase"
 import { collection, getDocs, addDoc, setDoc, doc, getDocFromCache } from "firebase/firestore"
 import { async } from "@firebase/util";
 import userEvent from "@testing-library/user-event";
+import { useNavigate } from "react-router";
 
 
 const CoordinatorPage = () =>
@@ -12,12 +13,14 @@ const CoordinatorPage = () =>
     const [ formFields, setformFields ] = useState( [] )
     const [ programDetails, setProgramDetails ] = useState( [] )
     const [ count, setCount ] = useState( 0 )
-
+    const navigate = useNavigate();
     const handleNewEntry = ( e ) =>
     {
         e.preventDefault()
         var val = document.forms[ "indicator-form" ].getElementsByTagName( "input" );
-        console.log( val )
+        alert( "Data saved successfully!" )
+        navigate( "/home" );
+        //console.log( val )
     }
     useEffect( () =>
     {
@@ -32,7 +35,7 @@ const CoordinatorPage = () =>
             {
                 return
             }
-            const formCollectionRef = collection( db, "program_templates/Teaching Foundation/categories" );
+            const formCollectionRef = collection( db, "program_templates/New Program/categories" );
             //const data = await 
             getDocs( formCollectionRef ).then( val =>
             {
@@ -72,7 +75,16 @@ const CoordinatorPage = () =>
                         )
                     } )
                 }
-
+                < div className="mb-3" >
+                    <label htmlFor="Comment">Comment</label>
+                    <input type="text" id="comment" name="comment" className="form-control" required />
+                </div>
+                < div className="mb-3" >
+                    {/* <label htmlFor="submit">Submit</label> */ }
+                    <Button variant="primary" type="Submit" className="submitButton">
+                        Submit
+                    </Button>
+                </div>
 
 
                 {/* <div className="mb-3">
