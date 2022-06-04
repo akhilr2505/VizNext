@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {db} from "../firebase"
 import {collection, getDocs, addDoc, setDoc, doc} from "firebase/firestore"
 
-const ManagementIndicatorComponent = () => {
+const ManagementIndicatorComponent = (progName) => {
     const [formFields, setFormFields] = useState([
         { name: '', type: '' },
       ])
@@ -23,7 +23,7 @@ const ManagementIndicatorComponent = () => {
         e.preventDefault();
    
     try {
-      setDoc(doc(db, "program_templates", programName), {
+      setDoc(doc(db, "program_templates", progName.props,"categories", "form_fields"), {
         formFields
       })
      

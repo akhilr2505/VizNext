@@ -36,7 +36,7 @@ function App ()
               </ProtectedRoute>
             } />
             <Route
-              path="/ManagementPage"
+              path="/management"
               element={
                 <ProtectedRoute>
                   <ManagementPage />

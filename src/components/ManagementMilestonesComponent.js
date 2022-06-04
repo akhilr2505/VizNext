@@ -3,7 +3,11 @@ import { Button } from "react-bootstrap";
 import { Form, Alert } from "react-bootstrap";
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-const ManagementMilestonesComponent = () =>
+import {db} from "../firebase"
+import {collection, getDocs, addDoc, setDoc, doc} from "firebase/firestore"
+
+
+const ManagementMilestonesComponent = (programName) =>
 {
     const [ milestone, setMilestone ] = useState( "" );
     const [ milestoneDate, setMilestoneDate ] = useState( new Date() );
@@ -17,9 +21,23 @@ const ManagementMilestonesComponent = () =>
     const handleNewMilestone = async ( e ) =>
     {
         e.preventDefault();
-        setMilestones( [ { "title": milestone, "date": milestoneDate }, ...milestones ] )
+        setMilestones( [ { "title": milestone, "date": milestoneDate}, ...milestones ] )
         console.log( milestones )
     };
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        try {
+            setDoc(doc(db, "program_templates", programName.props,"categories", "milestones"), {
+              milestones
+            })
+            console.log(programName.props)
+           
+          } catch (err) {
+           console.log(err)
+          }
+            }
+    
     return (
         <div className="Milestones">
             <h2 className="mb-3">Add Milestone: </h2>
@@ -58,6 +76,10 @@ const ManagementMilestonesComponent = () =>
                 initialView="dayGridMonth"
                 events={ milestones }
             />
+
+                <Button variant="primary" className="signupButton" onClick={handleSubmit}>
+                    Submit Milestones
+                </Button>   
         </div>
     )
 
