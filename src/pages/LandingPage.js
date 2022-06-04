@@ -13,6 +13,10 @@ import donations from '../images/donations.jpg';
 import visualize from '../images/visualize.png';
 import tracking from '../images/tracking.png';
 import donations1 from '../images/donations1.png';
+import undraw_Investing_re_bov7 from "../images/undraw_Investing_re_bov7.png"
+import undraw_Data_trends_re_2cdy from "../images/undraw_Data_trends_re_2cdy.png"
+import undraw_Work_from_anywhere_re_s2i6 from "../images/undraw_Work_from_anywhere_re_s2i6.png"
+import undraw_Website_builder_re_ii6e from "../images/undraw_Website_builder_re_ii6e.png"
 import { FaEnvelope,FaPhoneAlt } from "react-icons/fa";
 import visualize1 from '../images/visualize1.png';
 import eventman from '../images/eventman.png';
@@ -43,52 +47,29 @@ const LandingPage = () => {
         
         
       
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Container>
-  <Navbar.Brand href="#home">#Name</Navbar.Brand>
-  
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="me-auto">
+   
+          
+      <div className='startDiv'>
+      <div className='secondDiv'>
+      <div className='allText'>
+      <p className='welcomeText'>Welcome to .........!</p>
+        <p className='otherText'>An application that can accurately measure progress of each program, visualise impact metrics and provide means of recording field data through specifically catered forms.</p>
+      </div>
       
-      
-    </Nav>
-    <Nav>
-      <Nav.Link >
-            <Button className="authButtons" variant="primary" onClick={handleLogin} id='btn'>
+        <img src={image1} className='startImage' alt="" />
+      </div>
+      <div className='bothButtons'>
+            <Button className="authButtons" variant="primary" onClick={handleLogin} id='btn' >
               Login
             </Button>
-      </Nav.Link>
-      <Nav.Link >
             <Button className="authButtons" variant="primary" onClick={handleSignup} id='btn'>
               Signup
             </Button>
-      </Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-  </Container>
-</Navbar>
+      </div>
+       
+      </div>
       
-        <div 
-          className="site-layout-background"
-          style={{ padding: 24, textAlign: "center" }}
-        >
-          <div style={{ float: "right", marginRight: "2rem" }}>
-            <img
-              src={cfglogo}
-              alt=""
-            /></div>
-          </div>
-          <h1 
-            style={{
-              fontSize: "4rem",
-              fontFamily: "Montserrat",
-              fontWeight: "bold",
-              marginTop: "0px",
-              position: "relative",
-            }}
-          >
-           United Way Bengaluru 
-          </h1>
+        
          
           
 
@@ -96,61 +77,48 @@ const LandingPage = () => {
 
 
 
-    <div>
-      <img src={image1} className='w-100' alt="" />
-    </div>
-
-
-    <div className='about'>
-      <h2 className='ahead'>ABOUT US</h2>
-        <div>
-          <p>The Process of Tracking the progress of the programs is difficult and time takeing.</p>
-          <div>
-            <h3>We for United Way Bengaluru will the answer to this.</h3>
-            <p>So we innovate by VISUALIZE THE DATA FOR EASE AND CONSUPTION.
-              <br></br>This automate solution which would track the progress tracking for the management term to visulaze the data and track it.</p>
-          </div>
-        </div>
-    </div>
     
-    <div className='cards1 '>
+    
+    <div className=''>
 
-    <div className='container d-flex mx-auto '>
-    <Card style={{ width: '18rem' }} className='c1' >
-      <Card.Img variant="top" src={donations1} />
-      <Card.Body>
-          <Card.Title>DONATIONS</Card.Title>
+    <div className='cardList'>
+    <Card className='card' >
+    <Card.Body className='cardBody'>
+          <Card.Title className='cardTitle'>Donation Tracking</Card.Title>
         <Card.Text>
-          Your donation might change to a cause.
+          Track exactly where your donations are being utilised and monitor the impact being made through your donations.
+        </Card.Text>
+      </Card.Body>
+      <Card.Img variant="top" src={undraw_Investing_re_bov7} className='cardImage'/>
+      
+    </Card>
+
+    <Card className='card'>
+      <Card.Img variant="top" src={undraw_Website_builder_re_ii6e} className='cardImage'/>
+      <Card.Body className='cardBody'>
+          <Card.Title className='cardTitle'>Program Template Creation</Card.Title>
+        <Card.Text>
+          Create templates specifically catered to each program by choosing the desired indicators and creating milestones to effectively measure the progress of each program. 
         </Card.Text>
       </Card.Body>
     </Card>
 
-    <Card style={{ width: '18rem' }} className='c1'>
-      <Card.Img variant="top" src={tracking} />
-      <Card.Body>
-          <Card.Title>TRACKING</Card.Title>
+    <Card className='card'>
+    <Card.Body className='cardBody'>
+          <Card.Title className='cardTitle'>Visualisations</Card.Title>
         <Card.Text>
-          Tracking the products and understand the status of the program!!
+          Get a deep understanding of the impact made by each program through various graphs and visualisations. Understand the data in depth through these graphical representations.
         </Card.Text>
       </Card.Body>
+      <Card.Img variant="top" src={undraw_Data_trends_re_2cdy} className='cardImage'/>
+      
     </Card>
-
-    <Card style={{ width: '18rem' }} className='c1'>
-      <Card.Img variant="top" src={visualize1} />
-      <Card.Body>
-          <Card.Title>VISUALIZE</Card.Title>
+    <Card className='card'>
+      <Card.Img variant="top" src={undraw_Work_from_anywhere_re_s2i6} className='cardImage'/>
+      <Card.Body className='cardBody'>
+          <Card.Title className='cardTitle'>Field Coordinator Provisions</Card.Title>
         <Card.Text>
-          visulazing the progress achieved in the particular tasks.
-        </Card.Text>
-      </Card.Body>
-    </Card>
-    <Card style={{ width: '18rem' }} className='c1'>
-      <Card.Img variant="top" src={eventman} />
-      <Card.Body>
-          <Card.Title>Event Coordinator</Card.Title>
-        <Card.Text>
-            Managing the programs and including identifiers.
+            Provisions for the field coordinator to enter data on a regular basis through forms that have been specifically created for the given
         </Card.Text>
       </Card.Body>
     </Card>
@@ -160,22 +128,26 @@ const LandingPage = () => {
 
     <footer className='f1 '>
       <div className='canter'>
-        <div className="">
+      <div className='contacts'>
+      <div className="email">
         <FaEnvelope />
-          <p>Admin@gmail.com</p>
+          <p>info@uwbengaluru.org</p>
         </div>
-        <div className="">
+        <div className="phone">
           <FaPhoneAlt />
-          <p>9767797133</p>
+          <p>080 4090 6345</p>
         </div>
         <div className="">
             <h5>Address</h5>
             <p>Building No. 5, 3rd Floor,
             Crimson Court,<br></br>
             Jeevan Bima Nagar Main Road,<br></br>
-            HAL 3rd Stage, Bengaluru,<br></br>
+            HAL 3rd Stage, Bengaluru,
               Karnataka 560075</p>
         </div>
+      </div>
+       
+        
         </div>
       </footer>
     

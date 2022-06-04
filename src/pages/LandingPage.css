@@ -18,11 +18,7 @@
     align-items: center;
 }
 */
-.authButtons {
-    text-align: right;
-    display: inline-block;
-    
-}
+
 
 
 .about{
@@ -45,9 +41,110 @@
 }
 .f1{
     text-emphasis-color: white;
-    background-color: #646FD4;
-    text-align: center;
-}
-.cards1{
     background-color: #DBDFFD;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.logo {
+    height: 100px;
+}
+
+.startDiv {
+    height: 100vh;
+    background-color: #DBDFFD;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.secondDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.allText {
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+
+}
+
+.welcomeText {
+    width: 400px;
+    margin-right: 50px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.otherText {
+    width: 500px;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.bothButtons {
+    margin-left: -600px;
+}
+
+.authButtons {
+   margin: 30px;
+    height: 40px;
+    width: 130px;
+}
+
+
+.startImage {
+    width: 450px;
+    height: 300px;
+    border-radius: 150px;
+}
+
+
+.cardList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+}
+
+.cardImage {
+    height: 400px;
+    width: 400px !important;
+}
+
+.cardTitle {
+    font-size: 35px !important;
+}
+
+.cardBody {
+    width: 400px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+.email {
+    margin: 20px;
+}
+
+.phone {
+    margin: 20px;
 }
