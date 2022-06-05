@@ -79,7 +79,7 @@ This page allows administrators ( Leadership Team ) to visualize data collected 
 
 ## Donor ( /donor )
 
-![image](https://user-images.githubusercontent.com/55338336/172034593-427475b3-3f14-41e2-a267-f79dc706377f.png)
+![image](https://user-images.githubusercontent.com/55338336/172034654-df797405-be31-42e9-87d8-dc76dba95ded.png)
 
 This page allows donors to see key metrics, visualizations and also make donations to United Way of Bangalore.
 
