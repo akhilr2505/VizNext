@@ -89,7 +89,21 @@ Steps:-
 1. Clone this GitHub Repository to a location of your choice.
 2.Create a new firebase database following onscreen prompts from this link: https://console.firebase.google.com/
 3. Create a file named firebase.js inside the src directory of this repository and initial JavaScript Configuration available on the link given in previous step after initial setup.
-4. Run the following commands.
+4. Run the following commands inside the repository folder using command prompt/terminal:
+
+```
+npm install
+npm start
+```
+
+5. The webapp should automatically open in your browser. If it does not, please visit http://localhost:3000/. Port 3000 needs to be available for this to work.
+
+# Database
+
+We are using firecase for our project as it is a highly scalable NoSQL database that perfectly suits our needs.
+
+![image](https://user-images.githubusercontent.com/55338336/172034413-0f131751-acab-40a1-b4a7-0371457a0a0d.png)
+
 
 
 
