@@ -57,13 +57,14 @@ This page allows a user to login using their Google account or their email Id an
 
 ## Field Coordinator ( /Coordinator )
 
-![image](https://user-images.githubusercontent.com/55338336/172033975-d344035e-28bd-483a-9bd3-a1662fb625b4.png)
+![image](https://user-images.githubusercontent.com/55338336/172034676-d9d12155-1432-4c4a-839f-ba1e6c248d50.png)
 
 This page allows field coordinators to fill preset fields that were created by th Data Monitoring and Validation Team and also performs basic validation of data.
 
 ## Management Page ( /Management )
 
-![image](https://user-images.githubusercontent.com/55338336/172034054-0d481284-10ea-44e0-8c70-8d5046a21650.png)
+![image](https://user-images.githubusercontent.com/55338336/172034561-ab620627-f627-4d71-91e8-96c8a127d883.png)
+
 
 This page allows the Data Monitoring and Validation Team to perform the following:
 
@@ -78,7 +79,7 @@ This page allows administrators ( Leadership Team ) to visualize data collected 
 
 ## Donor ( /donor )
 
-![image](https://user-images.githubusercontent.com/55338336/172034484-762f51fe-1add-45d1-8b68-ccfff222517c.png)
+![image](https://user-images.githubusercontent.com/55338336/172034654-df797405-be31-42e9-87d8-dc76dba95ded.png)
 
 This page allows donors to see key metrics, visualizations and also make donations to United Way of Bangalore.
 
