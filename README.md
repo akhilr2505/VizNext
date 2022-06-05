@@ -37,7 +37,58 @@ Provisions for the field coordinator to enter data on a regular basis through fo
 
 # Pages
 
-## Home Page (  )
+## Home Page ( / )
+
+![image](https://user-images.githubusercontent.com/55338336/172033913-23cc1c49-d2e4-4b82-b2d7-7ed00d2afdb1.png)
+
+This page explains the features of the platform.
+
+## Sign Up ( /signup )
+
+![image](https://user-images.githubusercontent.com/55338336/172033929-7f5de2f9-5244-4a87-9fb9-9595899fc518.png)
+
+This page lets new users choose their role and proceed to creating account.
+
+## Login ( /login )
+
+![image](https://user-images.githubusercontent.com/55338336/172033949-178c4d07-238d-458a-bf03-517db2e44b11.png)
+
+This page allows a user to login using their Google account or their email Id and password.
+
+## Field Coordinator ( /Coordinator )
+
+![image](https://user-images.githubusercontent.com/55338336/172033975-d344035e-28bd-483a-9bd3-a1662fb625b4.png)
+
+This page allows field coordinators to fill preset fields that were created by th Data Monitoring and Validation Team and also performs basic validation of data.
+
+## Management Page ( /Management )
+
+![image](https://user-images.githubusercontent.com/55338336/172034054-0d481284-10ea-44e0-8c70-8d5046a21650.png)
+
+This page allows the Data Monitoring and Validation Team to perform the following:
+
+1. Create Milestones and set target dates. These are automatically displayed in the integrated calendar.
+2. Create Field Coordinator Provisions (customized forms with validation).
+
+## Administration Page ( /admin )
+
+![image](https://user-images.githubusercontent.com/55338336/172034123-7378f0b2-7701-4258-8248-18001e55dcbb.png)
+
+This page allows administrators ( Leadership Team ) to visualize data collected by field coordinators and also see milestones in a Gantt Chart.
+
+## Donor ( /donor )
+
+![image](https://user-images.githubusercontent.com/55338336/172034204-0fabdbe1-5292-4da8-a302-61119cae61db.png)
+
+This page allows donors to see key metrics, visualizations and also make donations to United Way of Bangalore.
+
+# Getting Started
+
+Steps:-
+
+1. Clone this GitHub Repository to a location of your choice.
+2. Create a 
+
 
 
 
