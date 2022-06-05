@@ -12,3 +12,17 @@
     justify-content: center;
     padding-top: 2%;
 }
+
+.Pie-Chart{
+    display: flex;
+    justify-content:space-between;
+    width:33.33%; 
+    margin-bottom: 70px;
+}
+
+.Graph{
+    display: flex;
+    justify-content: space-between;
+    width:50%; 
+    height: 150%;
+}

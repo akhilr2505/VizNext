@@ -7,6 +7,8 @@ import { async } from "@firebase/util";
 import userEvent from "@testing-library/user-event";
 import { useNavigate } from "react-router";
 import "./CoordinatorPage.css"
+import NavbarComponent from "../components/NavbarComponent";
+
 
 const CoordinatorPage = () =>
 {
@@ -62,8 +64,7 @@ const CoordinatorPage = () =>
 
 
     return (
-        <div className="coordinatorPage">
-        <h1 className="pageTitle">Coordinator Page</h1>
+        <div>      <NavbarComponent />
             <form className="w-75 mx-auto " name="indicator-form" onSubmit={ handleNewEntry } >
                 {
                     formFields.map( ( value ) =>
