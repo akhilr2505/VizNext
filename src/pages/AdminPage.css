@@ -1,5 +1,4 @@
 .adminPage {
-    padding: 5%;
     background-color: #DBDFFD;
 }
 
@@ -25,4 +24,13 @@
     justify-content: space-between;
     width:50%; 
     height: 150%;
+}
+
+.specificTitle {
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.overallTitle {
+    margin-top: 30px;
 }

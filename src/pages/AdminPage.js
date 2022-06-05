@@ -20,6 +20,8 @@ import { db } from '../firebase';
 import { collection, getDoc, getDocs } from 'firebase/firestore';
 import './AdminPage.css'
 import "gantt-task-react/dist/index.css";
+import NavbarComponent from "../components/NavbarComponent"
+
 
 
 ChartJS.register(
@@ -398,10 +400,11 @@ const AdminPage = () =>
 
   return (
     <div className='adminPage'>
+    <NavbarComponent />
       <div>
-        <h1>Admin Dashboard</h1>
+        <h1 className='mainTitle'>Admin Dashboard</h1>
       </div>
-      <h2>Overall Organsiation Metrics</h2>
+      <h2 className='overallTitle'>Overall Organsiation Metrics</h2>
       <div className='Pie-Chart'>
               <Pie options={opt} data={data4} />
               <Pie options={opt} data={data5} />
@@ -412,7 +415,7 @@ const AdminPage = () =>
               <Bar options={options_chart} data={val}/>
               <Line options={options_chart} data={value}/>
           </div>
-          <h2>Program Specific Metrics</h2>
+          <h2 className='specificTitle'>Program Specific Metrics</h2>
       <div>{allProjects.length > 0 ?
         <Form.Select onChange={(e) => {setCurrentProgram(e.target.value)
          setFundIn(programs[e.target.value].funds_in);
@@ -443,7 +446,7 @@ const AdminPage = () =>
         </div> }
       </div>
       <div>
-        <h1> Milestone Timeline </h1>
+        <h2 className='specificTitle'> Milestone Timeline </h2>
       </div>
       <div className='ganttChart'>
         <Gantt tasks={ ganttTasks } />
