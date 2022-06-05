@@ -87,7 +87,11 @@ This page allows donors to see key metrics, visualizations and also make donatio
 Steps:-
 
 1. Clone this GitHub Repository to a location of your choice.
-2. Create a 
+2.Create a new firebase database following onscreen prompts from this link: https://console.firebase.google.com/
+3. Create a file named firebase.js inside the src directory of this repository and initial JavaScript Configuration available on the link given in previous step after initial setup.
+4. Run the following commands.
+
+
 
 
 
