@@ -56,7 +56,7 @@ const NavbarComponent = () =>
       <div className="mainNav">
         <Navbar bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand href="/home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="/home">VizNext</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/donor">Donor</Nav.Link>
             </Nav>
@@ -74,7 +74,7 @@ const NavbarComponent = () =>
       <div className="mainNav">
         <Navbar bg="dark" variant="dark" style={ { backgroundcolor: "#242F9B" } }>
           <Container>
-            <Navbar.Brand href="/home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="/home">VizNext</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/admin">Admin</Nav.Link>
 
@@ -93,7 +93,7 @@ const NavbarComponent = () =>
       <div className="mainNav">
         <Navbar bg="dark" variant="dark" style={ { backgroundcolor: "#242F9B" } }>
           <Container>
-            <Navbar.Brand href="/home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="/home">VizNext</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/coordinator">Coordinator</Nav.Link>
 
@@ -112,7 +112,7 @@ const NavbarComponent = () =>
       <div className="mainNav">
         <Navbar bg="dark" variant="dark" style={ { backgroundcolor: "#242F9B" } }>
           <Container>
-            <Navbar.Brand href="/home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="/home">VizNext</Navbar.Brand>
             <Nav className="me-auto">
               <Nav.Link href="/management">Management</Nav.Link>
 

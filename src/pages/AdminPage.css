@@ -2,6 +2,10 @@
     background-color: #DBDFFD;
 }
 
+.innerDiv {
+    padding-left: 20px;
+}
+
 .ganttChart {
     background-color: white;
 }

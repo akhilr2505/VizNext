@@ -326,7 +326,7 @@ const AdminPage = () =>
     {
       "start": new Date( "2022-06-04T00:00:00.000Z" ),
       "end": new Date( "2022-06-11T00:00:00.000Z" ),
-      "name": "Vaccinate 1000",
+      "name": "Training Period",
       "id": "Task 1",
       "styles": {
         "progressColor": "#ffbb54",
@@ -337,7 +337,7 @@ const AdminPage = () =>
     {
       "start": new Date( "2022-06-11T00:00:00.000Z" ),
       "end": new Date( "2022-06-18T00:00:00.000Z" ),
-      "name": "Vaccinate 5000",
+      "name": "Introductory Classes",
       "id": "Task 2",
       "styles": {
         "progressColor": "#ffbb54",
@@ -347,7 +347,7 @@ const AdminPage = () =>
     {
       "start": new Date( "2022-06-18T00:00:00.000Z" ),
       "end": new Date( "2022-06-25T00:00:00.000Z" ),
-      "name": "Vaccinate 20000",
+      "name": "Advanced Classes",
       "id": "Task 3",
       "styles": {
         "progressColor": "#ffbb54",
@@ -435,7 +435,8 @@ const AdminPage = () =>
   return (
     <div className='adminPage'>
     <NavbarComponent />
-      <div>
+    <div className='innerDiv'>
+    <div >
         <h1 className='mainTitle'>Admin Dashboard</h1>
       </div>
       <h2 className='overallTitle'>Overall Organsiation Metrics</h2>
@@ -486,6 +487,8 @@ const AdminPage = () =>
         <Gantt tasks={ ganttTasks } />
       </div>
 
+    </div>
+     
 
     </div>
   )

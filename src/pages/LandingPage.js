@@ -52,7 +52,7 @@ const LandingPage = () => {
       <div className='startDiv'>
       <div className='secondDiv'>
       <div className='allText'>
-      <p className='welcomeText'>Welcome to .........!</p>
+      <p className='welcomeText'>Welcome to VizNext!</p>
         <p className='otherText'>An application that can accurately measure progress of each program, visualise impact metrics and provide means of recording field data through specifically catered forms.</p>
       </div>
       
