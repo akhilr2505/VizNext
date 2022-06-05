@@ -439,7 +439,7 @@ const AdminPage = () =>
     <div >
         <h1 className='mainTitle'>Admin Dashboard</h1>
       </div>
-      <h2 className='overallTitle'>Overall Organsiation Metrics</h2>
+      <h2 className='overallTitle'>Overall Organization Metrics</h2>
       <div className='Pie-Chart'>
               <Pie options={opt1} data={data4} />
               <Pie options={opt2} data={data5} />

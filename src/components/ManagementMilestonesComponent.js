@@ -60,7 +60,7 @@ const ManagementMilestonesComponent = ( programName ) =>
 
             <form onSubmit={ handleNewMilestone } className="form">
                 <div className='milestoneFields'>
-                    <label className="milestoneFieldsLabel">Add Milestone: </label>
+                    <label className="milestoneFieldsLabel">Enter Milestone: </label>
                     <Form.Group className="milestoneField" controlId="formBasicEmail">
                         <Form.Control
                             type="text"

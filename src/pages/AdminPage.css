@@ -8,6 +8,7 @@
 
 .ganttChart {
     background-color: white;
+    padding-bottom: 50px;
 }
 
 .chartContainer {
@@ -31,10 +32,16 @@
 }
 
 .specificTitle {
-    margin-top: 100px;
+    margin-top: 70px;
     margin-bottom: 20px;
 }
 
 .overallTitle {
     margin-top: 30px;
+}
+
+.mainTitle {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 60px;
 }
