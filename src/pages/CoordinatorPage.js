@@ -8,7 +8,7 @@ import userEvent from "@testing-library/user-event";
 import { useNavigate } from "react-router";
 import "./CoordinatorPage.css"
 import NavbarComponent from "../components/NavbarComponent";
-
+import "./CoordinatorPage.css"
 
 const CoordinatorPage = () =>
 {
@@ -64,8 +64,11 @@ const CoordinatorPage = () =>
 
 
     return (
-        <div>      <NavbarComponent />
-            <form className="w-75 mx-auto " name="indicator-form" onSubmit={ handleNewEntry } >
+        <div>      
+        <NavbarComponent />
+        <div className="coordinatorPage">
+        <h1>Field Coordinator Page</h1>
+        <form className="w-75 mx-auto " name="indicator-form" onSubmit={ handleNewEntry } >
                 {
                     formFields.map( ( value ) =>
                     {
@@ -77,20 +80,19 @@ const CoordinatorPage = () =>
                         )
                     } )
                 }
-                < div className="mb-3" >
+                < div className="commentDiv" >
                     <label className="cooLabel" htmlFor="Comment">Comment</label>
                     <input type="text" id="comment" name="comment" className="form-control cooComment" required />
                 </div>
-                < div className="mb-3" >
-                    {/* <label htmlFor="submit">Submit</label> */ }
-                    <Button variant="primary" type="Submit" className="submitButton">
+                <Button variant="primary" type="Submit" className="submitButton cooSubmit">
                         Submit
                     </Button>
-                </div>
 
 
                 
             </form >
+        </div>
+           
         </div >
     )
 }

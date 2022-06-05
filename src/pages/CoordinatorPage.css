@@ -1,6 +1,10 @@
 .coordinatorPage {
     background-color: #DBDFFD;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .fieldBox {
@@ -8,5 +12,33 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
+
+.cooLabel {
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+.cooInput {
+    width: 400px !important;
+}
+
+.commentDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: -35px;
+}
+
+.cooComment {
+    height: 100px;
+    width: 400px !important;
+}
+
+.cooSubmit {
+    margin-top: 30px;
+    margin-left: 35vw;
 }

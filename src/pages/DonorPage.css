@@ -23,3 +23,22 @@
   font-weight: 500;
   font-size: small;
 }
+
+.card1 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center !important;
+  margin: 2%;
+  width: 18%;
+  height: 25vh;
+}
+
+.row1 {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center !important;
+}
