@@ -63,7 +63,7 @@ This page allows field coordinators to fill preset fields that were created by t
 
 ## Management Page ( /Management )
 
-![image](https://user-images.githubusercontent.com/55338336/172034054-0d481284-10ea-44e0-8c70-8d5046a21650.png)
+![image](https://user-images.githubusercontent.com/55338336/172034505-a521210f-9515-4f1f-a1d6-5770e3721d34.png)
 
 This page allows the Data Monitoring and Validation Team to perform the following:
 
