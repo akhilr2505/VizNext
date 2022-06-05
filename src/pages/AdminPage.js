@@ -34,6 +34,29 @@ ChartJS.register(
   ArcElement
 );
 
+export const options_chart = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+  },
+  title: {
+      display: true,
+      text: 'Funds Recieved and Utilized monthly',
+    },
+  //maintainAspectRatio: false,
+  scales:{
+    y:{
+      stepSize: 10000,
+    }
+  }
+};
+
+export const opt = {
+  //maintainAspectRatio: false,
+}
+
 export const options = {
   responsive: true,
   plugins: {
@@ -107,9 +130,151 @@ export const data2 = {
   ],
 };
 
+//Bar Graph
+export const val = {
+  labels: months,
+  datasets: [
+    {
+      label: 'Funds Received',
+      data: funds_rec,
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+    {
+      label: 'Funds Utilized',
+      data: funds_use,
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
+  ],
+};
+
+//Line Chart
+export const value = {
+  labels:months,
+  datasets: [
+    {
+      label: 'Funds Received',
+      data: funds_rec,
+      borderColor: 'rgb(255, 99, 132)',
+      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    },
+    {
+      label: 'Funds Utilized',
+      data: funds_use,
+      borderColor: 'rgb(53, 162, 235)',
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    },
+  ],
+};
+
+//Pie Chart
+export const data4 = {
+  labels: months,
+  datasets: [
+    {
+      label: 'Funds Received',
+      data: funds_rec,
+      backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ],
+      borderWidth: 1,
+    },
+  ],
+  
+};
+
+
+export const data5 = {
+  labels: months,
+  datasets: [
+    {
+      label: 'Funds Utilized',
+      data: funds_use,
+      backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ],
+      borderWidth: 1,
+    },
+  ],
+  
+};
+
+
+export const data6 = {
+  labels: months,
+  datasets: [
+    {
+      label: '# of People Impacted',
+      data: impacts,
+      backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+        ],
+      borderWidth: 1,
+    },
+  ],
+  
+};
+
+
+
 
 const AdminPage = () =>
 {
+  const[x1, setx1] = useState([])
+
+    useEffect(()=>{
+        const getx1 = async()=>{
+            const data = await getDocs(usersCollectionRef);
+            setx1(data.docs.map((doc)=> ({...doc.data(), id:doc.id})))  
+        };
+        getx1();
+      },[]);
+
+      {x1.map((val)=>{
+        months.push(val.month);
+        funds_rec.push(val.funds_received);
+        funds_use.push(val.funds_used);
+        impacts.push(val.people_impacted);
+        return;
+    })}
 
   
   const [ programMetrics, setProgramMetrics ] = useState();
@@ -223,11 +388,22 @@ const AdminPage = () =>
       },
     ],
   };
+
   return (
     <div className='adminPage'>
       <div>
         <h1>Admin Dashboard</h1>
       </div>
+      <div className='Pie-Chart'>
+              <Pie options={opt} data={data1} />
+              <Pie options={opt} data={data2} />
+              <Pie options={opt} data={data3} />
+          </div>
+
+          <div className='Graph'>
+              <Bar options={options} data={val}/>
+              <Line options={options} data={value}/>
+          </div>
       <div>{allProjects.length > 0 ?
         <Form.Select onChange={(e) => {setCurrentProgram(e.target.value)
          setFundIn(programs[e.target.value].funds_in);
