@@ -32,12 +32,12 @@ const NavbarComponent = () =>
     console.log( userDetails )
     if ( userDetails.role )
     {
-      localStorage.setItem( "role", userDetails.role )
+      sessionStorage.setItem( "role", userDetails.role )
     }
   }, [ userDetails ] )
 
   console.log( "USER:", user, user.role )
-  console.log( "USER LOCAL:", localStorage.getItem( "role" ) )
+  console.log( "USER LOCAL:", sessionStorage.getItem( "role" ) )
   const handleLogout = async () =>
   {
     try
@@ -50,7 +50,7 @@ const NavbarComponent = () =>
     }
   };
 
-  if ( userDetails.role === "donor" || localStorage.getItem( "role" ) === "donor" )
+  if ( userDetails.role === "donor" || sessionStorage.getItem( "role" ) === "donor" )
   {
     return (
       <div className="mainNav">
@@ -68,7 +68,7 @@ const NavbarComponent = () =>
       </div>
     );
   }
-  if ( userDetails.role === "admin" || localStorage.getItem( "role" ) === "admin" )
+  if ( userDetails.role === "admin" || sessionStorage.getItem( "role" ) === "admin" )
   {
     return (
       <div className="mainNav">
@@ -87,7 +87,7 @@ const NavbarComponent = () =>
       </div>
     );
   }
-  if ( userDetails.role === "coordinator" || localStorage.getItem( "role" ) === "coordinator" )
+  if ( userDetails.role === "coordinator" || sessionStorage.getItem( "role" ) === "coordinator" )
   {
     return (
       <div className="mainNav">
@@ -106,7 +106,7 @@ const NavbarComponent = () =>
       </div>
     );
   }
-  if ( userDetails.role === "management" || localStorage.getItem( "role" ) === "management" )
+  if ( userDetails.role === "management" || sessionStorage.getItem( "role" ) === "management" )
   {
     return (
       <div className="mainNav">
