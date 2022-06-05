@@ -181,12 +181,12 @@ export const val = {
   datasets: [
     {
       label: 'Funds Received',
-      data: funds_rec,
+      data: [20000, 10000, 51000, 33000],
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
       label: 'Funds Utilized',
-      data: funds_use,
+      data: [15000, 2000, 34000, 28000],
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
   ],
@@ -198,13 +198,13 @@ export const value = {
   datasets: [
     {
       label: 'Funds Received',
-      data: funds_rec,
+      data: [20000, 10000, 51000, 33000],
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     },
     {
       label: 'Funds Utilized',
-      data: funds_use,
+      data: [15000, 2000, 34000, 28000],
       borderColor: 'rgb(53, 162, 235)',
       backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
@@ -217,7 +217,7 @@ export const data4 = {
   datasets: [
     {
       label: 'Funds Received',
-      data: [20000, 30000, 21000, 33000],
+      data: [20000, 10000, 51000, 33000],
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -246,7 +246,7 @@ export const data5 = {
   datasets: [
     {
       label: 'Funds Utilized',
-      data: [15000, 27000, 14000, 28000],
+      data: [15000, 2000, 34000, 28000],
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -275,7 +275,7 @@ export const data6 = {
   datasets: [
     {
       label: '# of People Impacted',
-      data: [150,255,147,259],
+      data: [150,45,350,259],
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
