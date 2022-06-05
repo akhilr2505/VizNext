@@ -34,6 +34,13 @@ ChartJS.register(
   ArcElement
 );
 
+const months = []
+const funds_rec = []
+const funds_use = []
+const impacts = []
+const usersCollectionRef = collection(db, "ngo_metrics");
+console.log(months.length)
+
 export const options_chart = {
   responsive: true,
   plugins: {
