@@ -34,7 +34,7 @@ ChartJS.register(
   ArcElement
 );
 
-const months = []
+const months = ['Jan','Feb','March','Apr']
 const funds_rec = []
 const funds_use = []
 const impacts = []
@@ -47,11 +47,11 @@ export const options_chart = {
     legend: {
       position: 'top',
     },
-  },
-  title: {
+    title: {
       display: true,
       text: 'Funds Recieved and Utilized monthly',
     },
+  },
   //maintainAspectRatio: false,
   scales:{
     y:{
@@ -60,9 +60,45 @@ export const options_chart = {
   }
 };
 
-export const opt = {
-  //maintainAspectRatio: false,
-}
+export const opt1 = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Funds Recieved Monthly',
+    },
+  },
+};
+
+export const opt2 = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Funds Utilized Monthly',
+    },
+  },
+};
+
+export const opt3 = {
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'top',
+    },
+    title: {
+      display: true,
+      text: 'Impact of Program Monthly',
+    },
+  },
+};
+
 
 export const options = {
   responsive: true,
@@ -179,7 +215,7 @@ export const data4 = {
   datasets: [
     {
       label: 'Funds Received',
-      data: funds_rec,
+      data: [20000, 30000, 21000, 33000],
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -208,7 +244,7 @@ export const data5 = {
   datasets: [
     {
       label: 'Funds Utilized',
-      data: funds_use,
+      data: [15000, 27000, 14000, 28000],
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -237,7 +273,7 @@ export const data6 = {
   datasets: [
     {
       label: '# of People Impacted',
-      data: impacts,
+      data: [150,255,147,259],
       backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -276,10 +312,8 @@ const AdminPage = () =>
       },[]);
 
       {x1.map((val)=>{
-        months.push(val.month);
         funds_rec.push(val.funds_received);
         funds_use.push(val.funds_used);
-        impacts.push(val.people_impacted);
         return;
     })}
 
@@ -402,14 +436,14 @@ const AdminPage = () =>
         <h1>Admin Dashboard</h1>
       </div>
       <div className='Pie-Chart'>
-              <Pie options={opt} data={data1} />
-              <Pie options={opt} data={data2} />
-              <Pie options={opt} data={data3} />
+              <Pie options={opt1} data={data4} />
+              <Pie options={opt2} data={data5} />
+              <Pie options={opt3} data={data6} />
           </div>
 
           <div className='Graph'>
-              <Bar options={options} data={val}/>
-              <Line options={options} data={value}/>
+              <Bar options={options_chart} data={val}/>
+              <Line options={options_chart} data={value}/>
           </div>
       <div>{allProjects.length > 0 ?
         <Form.Select onChange={(e) => {setCurrentProgram(e.target.value)
