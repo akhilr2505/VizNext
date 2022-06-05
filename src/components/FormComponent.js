@@ -13,7 +13,7 @@ export const FormComponent = () => {
         margin: "10px auto",
       }}
     >
-      <h4 style={{ margin: "20px auto" }}>Donation Form</h4>
+      <h4 style={{ margin: "20px auto" }} align="center">Donation Form</h4>
       <Form>
         <Form.Group className="formInput">
           <Form.Label>Enter your full name:</Form.Label>
@@ -34,7 +34,7 @@ export const FormComponent = () => {
             placeholder="Enter your donation amount"
           />
         </Form.Group>
-        <Button variant="primary" type="submit" className="form-button">
+        <Button variant="primary" type="submit" className="form-button" align="center">
           Submit Donation
         </Button>
       </Form>

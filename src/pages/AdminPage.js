@@ -409,8 +409,8 @@ const AdminPage = () =>
           </div>
 
           <div className='Graph'>
-              <Bar options={options} data={val}/>
-              <Line options={options} data={value}/>
+              <Bar options={options_chart} data={val}/>
+              <Line options={options_chart} data={value}/>
           </div>
           <h2>Program Specific Metrics</h2>
       <div>{allProjects.length > 0 ?
