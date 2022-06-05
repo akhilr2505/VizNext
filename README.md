@@ -72,13 +72,13 @@ This page allows the Data Monitoring and Validation Team to perform the followin
 
 ## Administration Page ( /admin )
 
-![image](https://user-images.githubusercontent.com/55338336/172034123-7378f0b2-7701-4258-8248-18001e55dcbb.png)
+![image](https://user-images.githubusercontent.com/55338336/172034467-24f5228a-22dc-446e-8134-c5f1120f1511.png)
 
 This page allows administrators ( Leadership Team ) to visualize data collected by field coordinators and also see milestones in a Gantt Chart.
 
 ## Donor ( /donor )
 
-![image](https://user-images.githubusercontent.com/55338336/172034204-0fabdbe1-5292-4da8-a302-61119cae61db.png)
+![image](https://user-images.githubusercontent.com/55338336/172034484-762f51fe-1add-45d1-8b68-ccfff222517c.png)
 
 This page allows donors to see key metrics, visualizations and also make donations to United Way of Bangalore.
 
