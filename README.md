@@ -57,7 +57,7 @@ This page allows a user to login using their Google account or their email Id an
 
 ## Field Coordinator ( /Coordinator )
 
-![image](https://user-images.githubusercontent.com/55338336/172034630-8ea1009a-66b9-429d-8c36-35b2e33a91d0.png)
+![image](https://user-images.githubusercontent.com/55338336/172034676-d9d12155-1432-4c4a-839f-ba1e6c248d50.png)
 
 This page allows field coordinators to fill preset fields that were created by th Data Monitoring and Validation Team and also performs basic validation of data.
 
