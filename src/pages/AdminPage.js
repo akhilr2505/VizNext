@@ -401,16 +401,18 @@ const AdminPage = () =>
       <div>
         <h1>Admin Dashboard</h1>
       </div>
+      <h2>Overall Organsiation Metrics</h2>
       <div className='Pie-Chart'>
-              <Pie options={opt} data={data1} />
-              <Pie options={opt} data={data2} />
-              <Pie options={opt} data={data3} />
+              <Pie options={opt} data={data4} />
+              <Pie options={opt} data={data5} />
+              <Pie options={opt} data={data6} />
           </div>
 
           <div className='Graph'>
               <Bar options={options} data={val}/>
               <Line options={options} data={value}/>
           </div>
+          <h2>Program Specific Metrics</h2>
       <div>{allProjects.length > 0 ?
         <Form.Select onChange={(e) => {setCurrentProgram(e.target.value)
          setFundIn(programs[e.target.value].funds_in);
