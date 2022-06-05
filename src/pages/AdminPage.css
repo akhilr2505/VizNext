@@ -1,5 +1,10 @@
 .adminPage {
     padding: 5%;
+    background-color: #DBDFFD;
+}
+
+.ganttChart {
+    background-color: white;
 }
 
 .chartContainer {

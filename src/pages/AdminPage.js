@@ -260,7 +260,7 @@ const AdminPage = () =>
       <div>
         <h1> Milestone Timeline </h1>
       </div>
-      <div>
+      <div className='ganttChart'>
         <Gantt tasks={ ganttTasks } />
       </div>
 

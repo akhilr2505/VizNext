@@ -3,9 +3,10 @@
   height: 30px;
 }
 
-/* .donor-body {
+.donor-body {
   background-color: #dbdffd;
-} */
+  height: 510vh;
+}
 
 .vis-title {
   text-align: "center";
